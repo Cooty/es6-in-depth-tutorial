@@ -88,20 +88,133 @@
 // import {gatVedelem, total} from './gatvedelem';
 //
 // console.log(gatVedelem[2], total);
-class Animal {
-  constructor(name, height) {
-    this.name = name;
-    this.height = height;
-  }
+// class Animal {
+//   constructor(name, height) {
+//     this.name = name;
+//     this.height = height;
+//   }
+//
+//   hello() {
+//     console.log(`I'm ${this.name} from the Animal Kingdom!`);
+//   }
+//
+// }
+//
+// let king = new Animal("Mufasa", 4.5);
+//
+// king.hello();
+//
+// console.log(king);
 
-  hello() {
-    console.log(`I'm ${this.name} from the Animal Kingdom!`);
-  }
+// Generators vs Iterators
+// Custom iterator
+// const arrayIterator = (array) => {
+//   let index = 0;
+//
+//   return {
+//     next: () => {
+//       if(index < array.length) {
+//         let next = array[index];
+//         index += 1;
+//         return next;
+//       }
+//     }
+//   };
+//
+// }
+//
+// let it = arrayIterator([1, 2, 3]);
+//
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+// function* arrayIterator() {
+//   for(let arg of arguments) {
+//     yield arg;
+//   }
+// }
 
-}
+// function* arrayIterator() {
+//   yield* arguments;
+// }
+//
+//
+// let it = arrayIterator(1, 2, 3);
+// console.log(it.next().value);
+// console.log(it.next().value);
+// console.log(it.next().value);
 
-let king = new Animal("Mufasa", 4.5);
+// Promises
+// let myPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => resolve('Resolved promise'), 10000);
+// });
+//
+// myPromise.then(response => console.log(response))
+//   .catch(error => console.log(error));
 
-king.hello();
+// Fetch API
+// const route = 'http://jsonplaceholder.typicode.com/posts/1';
+//
+// fetch(route, {method: "GET"})
+//   .then(response => response.json())
+//   .then(json => console.log(json));
 
-console.log(king);
+// es2016
+// let a = 2**5; // -> Math.pow(2, 5);
+// console.log(a);
+//
+// let isAcomie = ["Che Guevara", "Vladimir Iljich Lenin", "Joseph Stalin"].includes("Che Guevara");
+// console.log(isAcomie);
+
+// es2017
+// let obj = {a: 'one', b: 'two', c: 'three'};
+// let keys = Object.keys(obj); // ES2015
+// // added in ES2017
+// let values = Object.values(obj);
+// let entries = Object.entries(obj);
+//
+// console.log(keys);
+// console.log(values);
+// console.log(entries);
+//
+// // use case for entries
+// for (let entry of entries) {
+//   console.log(`key: ${entry[0]}, value: ${entry[1]}`);
+// }
+
+// Async / await
+// async function asyncOne() {
+//   return "One";
+// }
+//
+// async function asyncTwo() {
+//   return "Two";
+// }
+//
+// async function asyncThree() {
+//   const one = await asyncOne();
+//   console.log(one);
+//   const two = await asyncTwo();
+//   console.log(two);
+// }
+//
+// async function asyncFour() {
+//   const [resOne, resTwo] = await Promise.all(
+//     [asyncOne(), asyncTwo()]
+//   );
+//
+//   console.log(resOne, resTwo);
+// }
+
+// asyncFour();
+
+// REACT Book explorer
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import Global from './components/Global';
+
+ReactDOM.render(
+  <Global />, document.getElementById('root')
+);
